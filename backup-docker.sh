@@ -3,7 +3,7 @@
 
 CONTAINER_NAME=$1
 VOLUMES=$(docker inspect --format='{{range $vol, $path := .Config.Volumes}}{{$vol}} {{end}}' $CONTAINER_NAME)
-DATE=$(date +"%d-%b-%Y_%H-%M-%S")
+DATE=$(date +"%Y-%m-%d")
 FILENAME=$CONTAINER_NAME"_"$DATE.tar.gz
 
 echo "Backup docker's volume(s) from : "$CONTAINER_NAME
